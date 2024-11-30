@@ -4,14 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
 import Greet from "./Greet";
 
-/*
-    - Code Requirements:   
-    Greet Component should render the text "hello" 
-    and if a name is passed into the Component,
-    it should render "hello" followed by the name.
-*/
-
-
 test("Greet Component renders correctly", () => {
     render(<Greet />);
 
@@ -21,7 +13,12 @@ test("Greet Component renders correctly", () => {
 });
 
 
-test("Greet Component renders with a name", () => {
+/*
+    🔥 Note 🔥
+    🔹 if you use ".skip" after the "test" function, 
+    Jest/Vitest will skip test that Test Name 🔹
+*/
+test.skip("Greet Component renders with a name", () => {
     render(<Greet name="Hossein" />);
 
     const textElement = screen.getByText("Hello Hossein");
