@@ -16,7 +16,7 @@ test("Renders Vitest Link", () => {
     render(<App />);
 
     const linkElement = screen.getByText("Vitest");
-    
+
     expect(linkElement).toBeInTheDocument();
 });
 
