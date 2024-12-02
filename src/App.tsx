@@ -1,33 +1,15 @@
 // Root 👉🏻 "src" Folder 👉🏻 App.tsx
 
+import Query from "./components/query/Query"
+
 const App = () => {
 
     return (
-        <div data-testid="app">
-            <a 
-                href="https://vitest.dev/"
-                target="_blank"
-            >
-                Vitest
-            </a>
+        <div>
+            <Query />
         </div>
     )
 
 }
 
 export default App
-
-
-/*
-
-
-
-
-<div data-testid="app">
-    <h1>Hello Vitest</h1>
-
-    <a href="">
-        Learn Test
-    </a>
-</div>
-*/
