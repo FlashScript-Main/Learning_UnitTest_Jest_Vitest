@@ -5,6 +5,24 @@ import { render, screen } from "@testing-library/react";
 import Query from "./Query";
 
 describe("Query", () => {
+    test("renders Name Input Correctly", () => {
+        render(<Query />);
+
+        const nameInput = screen.getByPlaceholderText("Enter Your Name");
+        expect(nameInput).toBeInTheDocument();
+    });
+
+    test("renders Age Input Correctly", () => {
+        render(<Query />);
+
+        const ageInput = screen.getByPlaceholderText("Enter Your Age");
+        expect(ageInput).toBeInTheDocument();
+    });
+});
+
+
+/*
+describe("Query", () => {
     test("renders correctly", () => {
         render(<Query />);
 
@@ -19,7 +37,7 @@ describe("Query", () => {
         expect(nameTextarea).toBeInTheDocument();
     });
 });
-
+*/
 
 /*
 const nameInput = screen.getByRole("textbox", {

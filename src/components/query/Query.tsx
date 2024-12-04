@@ -3,35 +3,49 @@
 const Query = () => {
 
     return (
-        <>
-            <div>
-                <label htmlFor="name">
-                    Name
-                </label>
+        <div>
+            <input 
+                type="text" 
+                placeholder="Enter Your Name"
+            />
 
-                <input 
-                    type="text" 
-                    id="name" 
-                />
-            </div>
-
-            <div>
-                <label htmlFor="bio">
-                    Name
-                </label>
-
-                <textarea 
-                    name="bio" 
-                    id="bio"
-                />
-            </div>
-        </>
+            <input 
+                type="number" 
+                placeholder="Enter Your Age"
+            />
+        </div>
     )
 
 }
 
 export default Query
 
+
+/*
+<>
+    <div>
+        <label htmlFor="name">
+            Name
+        </label>
+
+        <input 
+            type="text" 
+            id="name" 
+        />
+    </div>
+
+    <div>
+        <label htmlFor="bio">
+            Name
+        </label>
+
+        <textarea 
+            name="bio" 
+            id="bio"
+        />
+    </div>
+</>
+*/
 
 /*
 <form>
