@@ -5,6 +5,17 @@ import { render, screen } from "@testing-library/react";
 import Query from "./Query";
 
 describe("Query", () => {
+    test("Renders Vitest Image by its Alt Correctly", () => {
+        render(<Query />);
+
+        const vitestImage = screen.getByAltText("Vitest");
+        expect(vitestImage).toBeInTheDocument();
+    });
+});
+
+
+/*
+describe("Query", () => {
     test("renders Name Input Correctly", () => {
         render(<Query />);
 
@@ -19,7 +30,7 @@ describe("Query", () => {
         expect(ageInput).toBeInTheDocument();
     });
 });
-
+*/
 
 /*
 describe("Query", () => {

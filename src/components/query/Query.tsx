@@ -4,14 +4,9 @@ const Query = () => {
 
     return (
         <div>
-            <input 
-                type="text" 
-                placeholder="Enter Your Name"
-            />
-
-            <input 
-                type="number" 
-                placeholder="Enter Your Age"
+            <img 
+                src="/public/vitest-image" 
+                alt="Vitest" 
             />
         </div>
     )
@@ -20,6 +15,35 @@ const Query = () => {
 
 export default Query
 
+/*
+<div>
+    <input 
+        type="text" 
+        value="name"
+        onChange={() => {}}
+    />
+
+    <input 
+        type="text" 
+        value="age"
+        onChange={() => {}}
+    />
+</div>
+*/
+
+/*
+<div>
+    <input 
+        type="text" 
+        placeholder="Enter Your Name"
+    />
+
+    <input 
+        type="number" 
+        placeholder="Enter Your Age"
+    />
+</div>
+*/
 
 /*
 <>
