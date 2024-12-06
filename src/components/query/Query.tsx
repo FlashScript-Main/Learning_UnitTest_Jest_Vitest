@@ -1,11 +1,15 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.tsx
 
-const Query = () => {
+const Query = ({ skills }: { skills: string[] }) => {
 
     return (
-        <div data-testid="query">
-            Query
-        </div>
+        <ul>
+            {skills.map((skill, index) => (
+                <li key={index}>
+                    {skill}
+                </li>
+            ))}
+        </ul>
     )
 
 }

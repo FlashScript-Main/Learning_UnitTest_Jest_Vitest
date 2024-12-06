@@ -3,16 +3,26 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Query from "./Query";
+import { skills } from "../../constants";
 
-describe("Query", () => {
-    test("Renders Correctly by its Data Attribute", () => {
-        render(<Query />);
+describe("Skills", () => {
+    test("renders correctly", () => {
+        render(<Query skills={skills} />);
 
-        const queryElement = screen.getByTestId("query");
-        expect(queryElement).toBeInTheDocument();
+        const listElement = screen.getByRole("list");
+        expect(listElement).toBeInTheDocument();
+    });
+
+    test("renders each skill correctly", () => {
+        render(<Query skills={skills} />);
+
+        const listItemElements = screen.getAllByRole("listitem");
+        expect(listItemElements).toHaveLength(skills.length);
     });
 });
 
+// "ul" Role 👉🏻 list
+// "li" Role 👉🏻 listitem
 
 /*
 describe("Query", () => {
