@@ -1,5 +1,28 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.tsx
 
+import { useState } from "react"
+
+const Query = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    return (
+        <>
+            {isLoggedIn ? (
+                <button>Start Learning</button>
+            ): (
+                <button onClick={() => setIsLoggedIn(true)}>
+                    Login
+                </button>
+            )}
+        </>
+    )
+
+}
+
+export default Query
+
+/*
 const Query = ({ skills }: { skills: string[] }) => {
 
     return (
@@ -13,8 +36,7 @@ const Query = ({ skills }: { skills: string[] }) => {
     )
 
 }
-
-export default Query
+*/
 
 /*
 <div>

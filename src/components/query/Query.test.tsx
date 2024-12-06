@@ -3,8 +3,59 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Query from "./Query";
-import { skills } from "../../constants";
 
+describe("queryBy", () => {
+    test("renders Login button", () => {
+        render(<Query />);
+
+        const loginButton = screen.getByRole("button", { name: "Login" });
+        expect(loginButton).toBeInTheDocument();
+    });
+
+    /*
+        🔥 we should use "queryByRole" method 🔥
+        🔹 we don't want the button to be in the Dom
+        the problem is that all get by and get all by class of queries
+        through an error if they can't find the matching element
+        then how do we fix this test?
+        well this is where a new class of queries come into picture
+        they are the "queryBy" and "queryAllBy" class of queries 🔹
+    */
+    test("Start Learning button is NOT rendered", () => {
+        render(<Query />);
+
+        const startLearningButton = screen.queryByRole("button", { name: "Start Learning" });
+        expect(startLearningButton).not.toBeInTheDocument();
+    });
+});
+
+
+/*
+describe("TextMatch", () => {
+    test("string", () => {
+        render(<Query />);
+
+        const stringTextMatch = screen.getByText("Hello World");
+        expect(stringTextMatch).toBeInTheDocument();
+    });
+
+    test("regex", () => {
+        render(<Query />);
+
+        const regexTextMatch = screen.getByText(/hello world/i);
+        expect(regexTextMatch).toBeInTheDocument();
+    });
+
+    test("Custom Function", () => {
+        render(<Query />);
+
+        const customFunctionTextMatch = screen.getByText((context) => context.endsWith("World"));
+        expect(customFunctionTextMatch).toBeInTheDocument();
+    });
+});
+*/
+
+/*
 describe("Skills", () => {
     test("renders correctly", () => {
         render(<Query skills={skills} />);
@@ -23,6 +74,7 @@ describe("Skills", () => {
 
 // "ul" Role 👉🏻 list
 // "li" Role 👉🏻 listitem
+*/
 
 /*
 describe("Query", () => {
