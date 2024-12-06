@@ -3,17 +3,23 @@
 const Query = () => {
 
     return (
-        <div>
-            <img 
-                src="/public/vitest-image" 
-                alt="Vitest" 
-            />
+        <div data-testid="query">
+            Query
         </div>
     )
 
 }
 
 export default Query
+
+/*
+<div>
+    <img 
+        src="/public/vitest-image" 
+        alt="Vitest" 
+    />
+</div>
+*/
 
 /*
 <div>

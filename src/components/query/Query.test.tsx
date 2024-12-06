@@ -5,14 +5,25 @@ import { render, screen } from "@testing-library/react";
 import Query from "./Query";
 
 describe("Query", () => {
-    test("Renders Vitest Image by its Alt Correctly", () => {
+    test("Renders Correctly by its Data Attribute", () => {
         render(<Query />);
 
-        const vitestImage = screen.getByAltText("Vitest");
-        expect(vitestImage).toBeInTheDocument();
+        const queryElement = screen.getByTestId("query");
+        expect(queryElement).toBeInTheDocument();
     });
 });
 
+
+/*
+describe("Query", () => {
+    test("Renders Close Icon Correctly", () => {
+        render(<Query />);
+
+        const closeIcon = screen.getByTitle("close");
+        expect(closeIcon).toBeInTheDocument();
+    });
+});
+*/
 
 /*
 describe("Query", () => {
