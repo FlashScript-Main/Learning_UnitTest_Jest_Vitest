@@ -1,21 +1,27 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.test.tsx
 
 import { describe, expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { logRoles, render, screen } from "@testing-library/react";
 import Query from "./Query";
 
-/*
-    ⭐ Pass a third Argument to "findByRole" Method ⭐
-*/
-describe("queryBy", () => {
+describe("Debugging", () => {
     test("Start Learning button is in the DOM", async () => {
-        render(<Query />);
+        const view = render(<Query />);
+
+        logRoles(view.container);
+        /*
+            🔹 now although react testing library has this capability
+            sometimes it is helpful if you can visualize the dom tree 
+            before writing the assertion, to help with that, 
+            we can make use of the "debug()" method on the screen object 🔹
+        */
 
         const startLearningButton = await screen.findByRole(
             "button", 
             { name: "Start Learning" },
             { timeout: 2000 }
         );
+
         expect(startLearningButton).toBeInTheDocument();
     });
 });

@@ -1,17 +1,39 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.tsx
 
-import { useEffect, useState } from "react"
+const Query = () => {
 
+    return (
+        <>
+            <ul>
+                <li></li>
+            </ul>
+
+            <div></div>
+
+            <span></span>
+
+            <button></button>
+
+            <a href=""></a>
+
+            <input type="text" />
+
+            <textarea></textarea>
+
+            <img src="" alt="" />
+        </>
+    )
+
+}
+
+export default Query
+
+
+/*
 const Query = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    /*
-        🔹 it's also very important to note that 
-        "findByRole" has a default timeout of 1000 milliseconds
-        if i change the set timeout duration to 1001 milliseconds,
-        we can see... 🔹
-    */
     useEffect(() => {
         setTimeout(() => {
             setIsLoggedIn(true);
@@ -31,8 +53,7 @@ const Query = () => {
     )
 
 }
-
-export default Query
+*/
 
 /*
 const Query = () => {
