@@ -1,26 +1,36 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.tsx
 
+import { useState } from "react";
+
 const Query = () => {
+
+    const [name, setName] = useState("");
+    const [age, setAge] = useState("");
 
     return (
         <>
-            <ul>
-                <li></li>
-            </ul>
+            <h1>Enter your Name and Age</h1>
 
-            <div></div>
+            <div>
+                <input 
+                    type="text" 
+                    placeholder="Enter Your Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
 
-            <span></span>
+                <input 
+                    type="number" 
+                    placeholder="Enter Your Age"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                />
+            </div>
 
-            <button></button>
-
-            <a href=""></a>
-
-            <input type="text" />
-
-            <textarea></textarea>
-
-            <img src="" alt="" />
+            <div>
+                <span>Name: {name}</span>
+                <span>Age: {age}</span>
+            </div>
         </>
     )
 

@@ -1,28 +1,30 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.test.tsx
 
 import { describe, expect, test } from "vitest";
-import { logRoles, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Query from "./Query";
 
+/*
+    🔥 Note 🔥
+    🔹 After opening the Link, it opens testing playground 
+    with a UI panel that generates the best query for your test
+    when you click on an element
+    Simply copy and paste this generated query to write your Assertion
+    This handy tip can help you write nearly flawless tests 
+    with "React-Testing-Library" 🔹
+*/
+
 describe("Debugging", () => {
-    test("Start Learning button is in the DOM", async () => {
-        const view = render(<Query />);
+    test("Person Info", () => {
+        render(<Query />);
 
-        logRoles(view.container);
-        /*
-            🔹 now although react testing library has this capability
-            sometimes it is helpful if you can visualize the dom tree 
-            before writing the assertion, to help with that, 
-            we can make use of the "debug()" method on the screen object 🔹
-        */
+        screen.logTestingPlaygroundURL();
 
-        const startLearningButton = await screen.findByRole(
-            "button", 
-            { name: "Start Learning" },
-            { timeout: 2000 }
-        );
+        const nameInput = screen.getByRole('textbox');
+        expect(nameInput).toBeInTheDocument();
 
-        expect(startLearningButton).toBeInTheDocument();
+        const ageInput = screen.getByRole('spinbutton');
+        expect(ageInput).toBeInTheDocument();
     });
 });
 
