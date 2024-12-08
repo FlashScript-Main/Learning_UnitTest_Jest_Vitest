@@ -4,6 +4,24 @@ import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Query from "./Query";
 
+/*
+    ⭐ Pass a third Argument to "findByRole" Method ⭐
+*/
+describe("queryBy", () => {
+    test("Start Learning button is in the DOM", async () => {
+        render(<Query />);
+
+        const startLearningButton = await screen.findByRole(
+            "button", 
+            { name: "Start Learning" },
+            { timeout: 2000 }
+        );
+        expect(startLearningButton).toBeInTheDocument();
+    });
+});
+
+
+/*
 describe("queryBy", () => {
     test("renders Login button", () => {
         render(<Query />);
@@ -12,15 +30,6 @@ describe("queryBy", () => {
         expect(loginButton).toBeInTheDocument();
     });
 
-    /*
-        🔥 we should use "queryByRole" method 🔥
-        🔹 we don't want the button to be in the Dom
-        the problem is that all get by and get all by class of queries
-        through an error if they can't find the matching element
-        then how do we fix this test?
-        well this is where a new class of queries come into picture
-        they are the "queryBy" and "queryAllBy" class of queries 🔹
-    */
     test("Start Learning button is NOT rendered", () => {
         render(<Query />);
 
@@ -28,7 +37,7 @@ describe("queryBy", () => {
         expect(startLearningButton).not.toBeInTheDocument();
     });
 });
-
+*/
 
 /*
 describe("TextMatch", () => {
