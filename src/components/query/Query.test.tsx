@@ -6,37 +6,65 @@ import Query from "./Query";
 import user from "@testing-library/user-event";
 
 describe("Pointer Interactions", () => {
-    test("Renders Correctly", () => {
-        render(<Query />);
-
-        const countElement = screen.getByRole("heading");
-        expect(countElement).toBeInTheDocument();
-
-        const incrementButton = screen.getByRole("button", { name: "Increment" });
-        expect(incrementButton).toBeInTheDocument();
-    });
-
-    test("Renders a Count of 0", () => {
-        render(<Query />);
-
-        const countElement = screen.getByRole("heading");
-        expect(countElement).toHaveTextContent("Count: 0");
-    });
-
-    test("Renders a Count of 1 After Clicking the Increment Button", async () => {
+    test("#1 => Renders a Count of 2 After Clicking the Increment Button Twice", async () => {
         user.setup();
 
         render(<Query />);
 
         const incrementButton = screen.getByRole("button", { name: "Increment" });
-        
         await user.click(incrementButton);
-
+        await user.click(incrementButton);
+        
         const countElement = screen.getByRole("heading");
-        expect(countElement).toHaveTextContent("Count: 1");
+        expect(countElement).toHaveTextContent("Count: 2");
+    });
+
+    // ❗ 👆🏻 OR 👇🏻 ❗
+    
+    test("#2 => Renders a Count of 2 After Clicking the Increment Button Twice", async () => {
+        user.setup();
+
+        render(<Query />);
+
+        const incrementButton = screen.getByRole("button", { name: "Increment" });
+        await user.dblClick(incrementButton);
+        
+        const countElement = screen.getByRole("heading");
+        expect(countElement).toHaveTextContent("Count: 2");
     });
 });
 
+/*
+test("Renders Correctly", () => {
+    render(<Query />);
+
+    const countElement = screen.getByRole("heading");
+    expect(countElement).toBeInTheDocument();
+
+    const incrementButton = screen.getByRole("button", { name: "Increment" });
+    expect(incrementButton).toBeInTheDocument();
+});
+
+test("Renders a Count of 0", () => {
+    render(<Query />);
+
+    const countElement = screen.getByRole("heading");
+    expect(countElement).toHaveTextContent("Count: 0");
+});
+
+test("Renders a Count of 1 After Clicking the Increment Button", async () => {
+    user.setup();
+
+    render(<Query />);
+
+    const incrementButton = screen.getByRole("button", { name: "Increment" });
+    
+    await user.click(incrementButton);
+
+    const countElement = screen.getByRole("heading");
+    expect(countElement).toHaveTextContent("Count: 1");
+});
+*/
 
 /*
 describe("Pointer Interactions", () => {
