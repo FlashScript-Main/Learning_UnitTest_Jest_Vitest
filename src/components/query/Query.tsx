@@ -4,6 +4,25 @@ import { useState } from "react";
 
 const Query = () => {
 
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+
+            <button onClick={() => setCount((c) => c + 1)}>
+                Increment
+            </button>
+        </div>
+    )
+}
+
+export default Query
+
+
+/*
+const Query = () => {
+
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
 
@@ -35,9 +54,7 @@ const Query = () => {
     )
 
 }
-
-export default Query
-
+*/
 
 /*
 const Query = () => {
