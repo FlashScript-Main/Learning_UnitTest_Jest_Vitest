@@ -3,18 +3,43 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Query from "./Query";
+import user from "@testing-library/user-event";
+
+describe("Pointer Interactions", () => {
+    test("Renders Correctly", () => {
+        render(<Query />);
+
+        const countElement = screen.getByRole("heading");
+        expect(countElement).toBeInTheDocument();
+
+        const incrementButton = screen.getByRole("button", { name: "Increment" });
+        expect(incrementButton).toBeInTheDocument();
+    });
+
+    test("Renders a Count of 0", () => {
+        render(<Query />);
+
+        const countElement = screen.getByRole("heading");
+        expect(countElement).toHaveTextContent("Count: 0");
+    });
+
+    test("Renders a Count of 1 After Clicking the Increment Button", async () => {
+        user.setup();
+
+        render(<Query />);
+
+        const incrementButton = screen.getByRole("button", { name: "Increment" });
+        
+        await user.click(incrementButton);
+
+        const countElement = screen.getByRole("heading");
+        expect(countElement).toHaveTextContent("Count: 1");
+    });
+});
+
 
 /*
-    🔥 Note 🔥
-    🔹 After opening the Link, it opens testing playground 
-    with a UI panel that generates the best query for your test
-    when you click on an element
-    Simply copy and paste this generated query to write your Assertion
-    This handy tip can help you write nearly flawless tests 
-    with "React-Testing-Library" 🔹
-*/
-
-describe("Debugging", () => {
+describe("Pointer Interactions", () => {
     test("Person Info", () => {
         render(<Query />);
 
@@ -27,7 +52,7 @@ describe("Debugging", () => {
         expect(ageInput).toBeInTheDocument();
     });
 });
-
+*/
 
 /*
 describe("queryBy", () => {
