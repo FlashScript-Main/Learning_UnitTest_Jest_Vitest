@@ -1,36 +1,23 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.tsx
 
-import { useState } from "react";
+import { useTheme } from "../../context/ThemeProvider"
 
 const Query = () => {
 
-    const [count, setCount] = useState(0);
-    const [anount, setAnount] = useState(0);
+    const { theme, setTheme } = useTheme();
 
     return (
         <div>
-            <div>
-                <h1>Count: {count}</h1>
+            <h1>
+                {theme === "light" ? "Light Mode" : "Dark Mode"}
+            </h1>
 
-                <button onClick={() => setCount((c) => c + 1)}>
-                    Increment
-                </button>
-            </div>
-
-            <div>
-                <input 
-                    type="number" 
-                    name="amount"
-                    value={anount}
-                    onChange={(e) => setAnount(parseInt(e.target.value))}
-                    />
-
-                <button onClick={() => setCount(anount)}>
-                    Set
-                </button>
-            </div>
+            <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+                {theme === "light" ? "Dark Mode" : "Light Mode"}
+            </button>
         </div>
     )
+
 }
 
 export default Query

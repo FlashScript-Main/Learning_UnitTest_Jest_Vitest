@@ -3,8 +3,62 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Query from "./Query";
-import user from "@testing-library/user-event";
+import { ThemeProvider } from "../../context/ThemeProvider";
 
+describe("Theme Provider", () => {
+    test("Renders Text Correctly", () => {
+        render(<Query />, {
+            wrapper: ThemeProvider,
+        });
+
+        const headingElement = screen.getByRole("heading");
+        expect(headingElement).toHaveTextContent("Light Mode");
+    });
+});
+
+
+/*
+describe("Keyboard Interactions", () => {
+    test("Renders a Count of 10 After Clicking the Set Button", async () => {
+        user.setup();
+
+        render(<Query />);
+
+        const amountInput = screen.getByRole("spinbutton");
+
+        await user.type(amountInput, "10");
+
+        expect(amountInput).toHaveValue(10);
+
+        const setButton = screen.getByRole("button", { name: "Set" });
+        await user.click(setButton);
+
+        const countElement = screen.getByRole("heading");
+        expect(countElement).toHaveTextContent("Count: 10");
+    });
+
+    test("Elements are Focused in the Right Order", async () => {
+        user.setup();
+
+        render(<Query />);
+
+        const amountInput = screen.getByRole("spinbutton");
+        const setButton = screen.getByRole("button", { name: "Set" });
+        const incrementButton = screen.getByRole("button", { name: "Increment" });
+
+        await user.tab();
+        expect(incrementButton).toHaveFocus();
+
+        await user.tab();
+        expect(amountInput).toHaveFocus();
+
+        await user.tab();
+        expect(setButton).toHaveFocus();
+    });
+});
+*/
+
+/*
 describe("Pointer Interactions", () => {
     test("#1 => Renders a Count of 2 After Clicking the Increment Button Twice", async () => {
         user.setup();
@@ -33,6 +87,7 @@ describe("Pointer Interactions", () => {
         expect(countElement).toHaveTextContent("Count: 2");
     });
 });
+*/
 
 /*
 test("Renders Correctly", () => {
