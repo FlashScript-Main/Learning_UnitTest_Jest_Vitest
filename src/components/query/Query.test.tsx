@@ -1,15 +1,13 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "query" Folder 👉🏻 Query.test.tsx
 
 import { describe, expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
+// import { render, screen } from "@testing-library/react";
+import { render, screen } from '../../utils/test-utils';
 import Query from "./Query";
-import { ThemeProvider } from "../../context/ThemeProvider";
 
 describe("Theme Provider", () => {
     test("Renders Text Correctly", () => {
-        render(<Query />, {
-            wrapper: ThemeProvider,
-        });
+        render(<Query />);
 
         const headingElement = screen.getByRole("heading");
         expect(headingElement).toHaveTextContent("Light Mode");
