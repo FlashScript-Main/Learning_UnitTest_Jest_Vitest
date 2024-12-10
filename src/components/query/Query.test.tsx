@@ -16,6 +16,17 @@ describe("Theme Provider", () => {
 
 
 /*
+describe("Theme Provider", () => {
+    test("Renders Text Correctly", () => {
+        render(<Query />);
+
+        const headingElement = screen.getByRole("heading");
+        expect(headingElement).toHaveTextContent("Light Mode");
+    });
+});
+*/
+
+/*
 describe("Keyboard Interactions", () => {
     test("Renders a Count of 10 After Clicking the Set Button", async () => {
         user.setup();

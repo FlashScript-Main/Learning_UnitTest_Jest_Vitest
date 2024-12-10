@@ -26,6 +26,26 @@ export default Query
 /*
 const Query = () => {
 
+    const { theme, setTheme } = useTheme();
+
+    return (
+        <div>
+            <h1>
+                {theme === "light" ? "Light Mode" : "Dark Mode"}
+            </h1>
+
+            <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+                {theme === "light" ? "Dark Mode" : "Light Mode"}
+            </button>
+        </div>
+    )
+
+}
+*/
+
+/*
+const Query = () => {
+
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
 
