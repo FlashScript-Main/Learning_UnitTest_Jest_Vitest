@@ -1,13 +1,13 @@
 // Root 👉🏻 "src" Folder 👉🏻 App.tsx
 
-import Query from "./components/query/Query"
+import Users from "./components/users/Users"
 // import { ThemeProvider } from "./context/ThemeProvider"
 
 const App = () => {
 
     return (
         <div>
-            <Query />
+            <Users />
         </div>
     )
 
