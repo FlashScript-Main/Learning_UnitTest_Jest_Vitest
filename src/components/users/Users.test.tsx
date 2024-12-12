@@ -18,4 +18,4 @@ describe("Users", () => {
         const users = await screen.findAllByRole("listitem");
         expect(users).toHaveLength(3);
     });
-})
+});
