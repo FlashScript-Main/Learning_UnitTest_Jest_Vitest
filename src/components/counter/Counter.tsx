@@ -1,9 +1,8 @@
 // Root 👉🏻 "src" Folder 👉🏻 "components" Folder 👉🏻 "counter" Folder 👉🏻 Counter.tsx
 
-import { CounterProps } from "./Counter.types"
+import { CounterProps } from "./Counter.types";
 
 const Counter = (props: CounterProps) => {
-
     return (
         <div>
             <h1>Counter</h1>
@@ -11,22 +10,16 @@ const Counter = (props: CounterProps) => {
             <p>Count: {props.count}</p>
 
             {props.handleIncrement && (
-                <button onClick={props.handleIncrement}>
-                    Increment
-                </button>
+                <button onClick={props.handleIncrement}>Increment</button>
             )}
 
             {props.handleDecrement && (
-                <button onClick={props.handleDecrement}>
-                    Decrement
-                </button>
+                <button onClick={props.handleDecrement}>Decrement</button>
             )}
         </div>
-    )
+    );
+};
 
-}
-
-export default Counter
-
+export default Counter;
 
 /* ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖ */

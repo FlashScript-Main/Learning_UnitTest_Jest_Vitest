@@ -16,19 +16,23 @@ describe("Counter", () => {
     test("Handlers are Called", async () => {
         user.setup();
 
-        const incrementHandler = vitest.fn(); 
-        const decrementHandler = vitest.fn(); 
+        const incrementHandler = vitest.fn();
+        const decrementHandler = vitest.fn();
 
         render(
-            <Counter 
-                count={0} 
+            <Counter
+                count={0}
                 handleIncrement={incrementHandler}
                 handleDecrement={decrementHandler}
-            />
+            />,
         );
 
-        const incrementButton = screen.getByRole("button", { name: "Increment" });
-        const decrementButton = screen.getByRole("button", { name: "Decrement" });
+        const incrementButton = screen.getByRole("button", {
+            name: "Increment",
+        });
+        const decrementButton = screen.getByRole("button", {
+            name: "Decrement",
+        });
 
         await user.click(incrementButton);
         await user.click(decrementButton);
