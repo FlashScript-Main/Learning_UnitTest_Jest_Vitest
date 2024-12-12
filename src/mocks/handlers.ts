@@ -16,22 +16,22 @@
     So within the array let's start with "rest" followed by the method
     in our case it is the "get" method 🔹
 */
-import { http, HttpResponse } from 'msw'
- 
+import { http, HttpResponse } from "msw";
+
 export const handlers = [
-  // Intercept "GET https://example.com/user" requests...
-  http.get('https://jsonplaceholder.typicode.com/users', () => {
-    // ...and respond to them using this JSON response.
-    return HttpResponse.json([
-        {
-            name: "John Doe",
-        },
-        {
-            name: "Clark Kent",
-        },
-        {
-            name: "Ali Yaseen",
-        },
-    ])
-  }),
-]
+    // Intercept "GET https://example.com/user" requests...
+    http.get("https://jsonplaceholder.typicode.com/users", () => {
+        // ...and respond to them using this JSON response.
+        return HttpResponse.json([
+            {
+                name: "John Doe",
+            },
+            {
+                name: "Clark Kent",
+            },
+            {
+                name: "Ali Yaseen",
+            },
+        ]);
+    }),
+];
